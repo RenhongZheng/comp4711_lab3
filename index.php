@@ -14,7 +14,8 @@ and open the template in the editor.
       <?php
     include('Student.php');
     $students = array();
-        $first = new Student();
+    
+    $first = new Student();
     $first->surname = "Doe";
     $first->first_name = "John";
     $first->add_email('home','john@doe.com');
@@ -22,6 +23,7 @@ and open the template in the editor.
     $first->add_grade(65);
     $first->add_grade(75);
     $first->add_grade(55);
+    $first->status = "Senior";
     $students['j123'] = $first;
     
     $second = new Student();
@@ -33,12 +35,39 @@ and open the template in the editor.
     $second->add_grade(95);
     $second->add_grade(80);
     $second->add_grade(50);
+    $second->status = "Junior";
     $students['a456'] = $second;
-    foreach($students as $student)
-    echo $student->toString();
     
+    $third = new Student();
+    $third->surname = "Renhong";
+    $third->first_name = "Zheng";
+    $third->add_email('home','2859550360@qq.com');
+    $third->add_email('work1','2859550360@qq.com');
+    $third->add_grade(96);
+    $third->add_grade(84);
+    $third->add_grade(60);
+    $third->status = "Freshman";
+    $students['Z996'] = $third;
+    
+    $fourth = new Student();
+    $fourth->surname = "Kaizhong";
+    $fourth->first_name = "Luo";
+    $fourth->add_email('home','15256549988@qq.com');
+    $fourth->add_email('work1','15256549988@qq.com');
+    $fourth->add_grade(96);
+    $fourth->add_grade(82);
+    $fourth->add_grade(77);
+    $fourth->status = "Freshman";
+    $students['Z986'] = $fourth;
+    
+
+    
+
     
     ksort($students); // one of the many sort functions
-        ?>
+    
+    foreach($students as $student)
+    echo $student->toString();
+    ?>
     </body>
 </html>
